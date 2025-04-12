@@ -1,0 +1,274 @@
+:root {
+    /* Змінні кольорів */
+    --primary-color: #e3c65b;
+    --primary-dark: #d4a373;
+    --secondary-color: #fad0c4;
+    --accent-color: #6a8d73;
+    --text-color: #333;
+    --text-light: #666;
+    --white: #fff;
+    --light-bg: #f8f9fa;
+    --dark-bg: #222;
+    --dark-text: #eee;
+    --dark-secondary: #444;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    
+    /* Типографія */
+    --font-main: 'Montserrat', 'Arial', sans-serif;
+    --font-heading: 'Montserrat', 'Comic Sans MS', sans-serif;
+    
+    /* Відступи */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Радіус закруглення */
+    --border-radius-sm: 0.25rem;
+    --border-radius: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 2rem;
+    
+    /* Анімації */
+    --transition-speed: 0.3s;
+    --transition-timing: ease-in-out;
+    
+    /* Тіні */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Глобальні стилі */
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    background: var(--white);
+    color: var(--text-color);
+    text-align: center;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed) var(--transition-timing),
+    color var(--transition-speed) var(--transition-timing);
+    line-height: 1.6;
+    padding-top: 70px; /* Відступ для фіксованої навігаційної панелі */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Фіксована навігаційна панель */
+.navbar {
+    position: fixed !important; /* Фіксована позиція зверху */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Забезпечує повну ширину */
+    z-index: 1030; /* Високий z-index для відображення над іншими елементами */
+    background-color: black;
+    box-shadow: var(--shadow);
+    transition: all var(--transition-speed) var(--transition-timing);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.5em;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color var(--transition-speed) var(--transition-timing);
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* Секція героя */
+.hero {
+    padding: 6rem 0 3rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Ілюстрація */
+.illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Картки курсів */
+.course {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all var(--transition-speed) var(--transition-timing);
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    margin-top: var(--spacing-md);
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    background: var(--light-bg);
+}
+
+.course::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.course:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Темний режим */
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .navbar {
+    background-color: var(--dark-bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .nav-link {
+    color: var(--dark-text) !important;
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.dark-mode .nav-link.active::after {
+    background: var(--primary-color);
+}
+
+/* Перемикач теми */
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: all var(--transition-speed) var(--transition-timing);
+    z-index: 1000;
+}
+
+.theme-switcher:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Медіа-запити для адаптивного дизайну */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+    
+    .body {
+        padding-top: 120px; /* Коригування відступу для мобільних пристроїв */
+    }
+}
