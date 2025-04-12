@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навчайся легко | Головна сторінка</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+    <link rel="stylesheet" href="styles.css">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">            
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-graduation-cap me-2"></i>Навчайся легко
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Головна</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="courses.html">Курси</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.html">Реєстрація</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-lg-start">
+                        <h1 class="display-4 fw-bold mb-3">Навчайся легко</h1>
+                        <p class="lead mb-4">Освіта, яка тобі сподобається! Інтерактивні курси, які змінять твоє життя.</p>
+                        <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
+                            <a href="courses.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play-circle me-2"></i>Почати навчання
+                            </a>
+                            <a href="register.html" class="btn btn-outline-secondary btn-lg">
+                                <i class="fas fa-user-plus me-2"></i>Зареєструватись
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="illustration">
+                            <i class="fas fa-laptop-code fa-6x primary-color"></i>
+                            <i class="fas fa-graduation-cap fa-5x secondary-color"></i>
+                            <i class="fas fa-brain fa-4x accent-color"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="courses py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">
+                    <i class="fas fa-sparkles me-2"></i>В чому практикуємось сьогодні?
+                </h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="course card h-100" data-course="web.html">
+                            <div class="card-body text-center">
+                                <div class="course-icon mb-3">
+                                    <i class="fas fa-laptop-code fa-3x primary-color"></i>
+                                </div>
+                                <h3 class="card-title">Веб-розробка</h3>
+                                <p class="card-text">Створи власний сайт! HTML, CSS, JS для початківців.</p>
+                                <a href="web.html" class="stretched-link" aria-label="Дізнатися більше про Веб-розробку"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="course card h-100" data-course="game.html">
+                            <div class="card-body text-center">
+                                <div class="course-icon mb-3">
+                                    <i class="fas fa-gamepad fa-3x secondary-color"></i>
+                                </div>
+                                <h3 class="card-title">Створення ігор</h3>
+                                <p class="card-text">Розробка ігор на Unity. Для геймерів та творців!</p>
+                                <a href="game.html" class="stretched-link" aria-label="Дізнатися більше про Створення ігор"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="course card h-100" data-course="english.html">
+                            <div class="card-body text-center">
+                                <div class="course-icon mb-3">
+                                    <i class="fas fa-globe fa-3x accent-color"></i>
+                                </div>
+                                <h3 class="card-title">Англійська без нудьги</h3>
+                                <p class="card-text">Ігри, меми та розмови. Вчи мову легко!</p>
+                                <a href="english.html" class="stretched-link" aria-label="Дізнатися більше про Англійську мову"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-section py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow">
+                            <div class="card-body p-4">
+                                <h2 class="section-title text-center mb-4">
+                                    <i class="fas fa-fire me-2"></i>Челлендж: перевір свої знання
+                                </h2>
+                                <p class="text-center mb-4">Пройди тест і отримай свій бал!</p>
+                                <div class="quiz" id="quiz-container">
+                                    <div class="question-container">
+                                        <h3 id="question" class="mb-3">Яка мова використовується для стилізації сайтів?</h3>
+                                        <div class="answers">
+                                            <button class="btn btn-outline-primary w-100 mb-2" data-answer="HTML">HTML</button>
+                                            <button class="btn btn-outline-primary w-100 mb-2" data-answer="CSS">CSS</button>
+                                            <button class="btn btn-outline-primary w-100 mb-2" data-answer="JavaScript">JavaScript</button>
+                                        </div>
+                                    </div>
+                                    <div id="result" class="mt-4 text-center"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="waitlist py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title mb-4">
+                            <i class="fas fa-bell me-2"></i>Приєднуйся до списку очікування
+                        </h2>
+                        <p class="lead mb-4">Отримуй повідомлення про нові курси та ексклюзивні знижки</p>
+                        <form id="waitlistForm" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="waitlistName" placeholder="Ваше ім'я" required>
+                                    <div class="invalid-feedback">
+                                        Будь ласка, введіть своє ім'я
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="waitlistEmail" placeholder="Ваш email" required>
+                                    <div class="invalid-feedback">
+                                        Будь ласка, введіть валідний email
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <button class="btn btn-primary w-100" type="submit">
+                                        <i class="fas fa-paper-plane me-2"></i>Приєднатися
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="waitlistSuccess" class="alert alert-success mt-3 d-none">
+                            Дякуємо! Ви успішно додані до списку очікування.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2025 Навчайся легко | Вчися круто та весело! <i class="fas fa-rocket ms-1"></i></p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="theme-switcher" id="themeSwitcher" aria-label="Змінити тему">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
